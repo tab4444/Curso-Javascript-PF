@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="shortcut icon" href="sources/imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="sources/css/styles.css">
+</head>
+<body class="bg-gray-1">
+    <nav class="flex row-container space-between center-y bg-black font-color-white txt-cap weight-400 p-1">
+        <ul class="flex row-container col-gap-1-5 center-y">
+            <li><a href="index.html"><img class="img-s-1" src="sources/imgs/logo.png" alt="Logo de El Bolson de Thiago"></a></li>
+            <li><a href="index.html">inicio</a></li>
+            <li><a href="tienda.html">tienda</a></li>
+            <li><a href="index.html">contacto</a></li>
+        </ul>
+        <div class="flex center-y row-container col-gap-1">
+            <button class="light-btn flex center-y center-x font-size-1 bg-black font-color-white h-bg-black p-0-5" type="button"><ion-icon name="moon"></ion-icon></button>
+            <a href="carrito.html"><ion-icon class="bag-btn-icon font-size-4-5 flex center-y" name="bag-outline"></ion-icon></a>
+            <span class="product-amount font-size-1 font-color-white">0</span>
+        </div>
+    </nav>
+    <h1 class="flex center-x bg-green-1 font-color-black font-size-2 txt-upp p-0-5 weight-700">carrito</h1>
+
+    <div class="flex row-container col-gap-2">
+        <div class="product-list cart flex row-container col-gap-1-5 row-gap-1-5 txt-cap weight-500 font-size-2 p-5 wrap">
+            <!-- <div class="product-card cart flex row-container col-gap-0-5">
+                <div class="img-container">
+                    <img src="sources/imgs/achicoria.jpg" alt="achicoria (atado)">
+                </div>
+                <div class="flex col-container row-gap-0-5 p-1">
+                    <p>achicoria (atado)</p>
+                    <p>$150</p>
+                    <div class="btn-product-amount-container flex row-container">
+                        <button class="font-size-3">-</button>
+                        <p class="font-size-3">1</p>
+                        <button class="font-size-3">+</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="product-ticket flex col-container row-gap-1 bg-white m-5 p-2 center-x shadow">
+            <h2 class="txt-cap">- carrito de compras -</h2>
+            <div class="flex row-container space-between txt-upp weight-600">
+                <p>producto</p>
+                <p>subtotal</p>
+            </div>
+            <div class="flex row-container space-between txt-upp">
+                <p>achicoria (atado) - (1)</p>
+                <p>$150</p>
+            </div>
+            <div class="precio-total flex row-container space-between center-y m-1">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="sources/js/main.js"></script>
+    <script type="module" src="sources/js/productos.js"></script>
+    <script src="https://kit.fontawesome.com/bfee6bbf74.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
