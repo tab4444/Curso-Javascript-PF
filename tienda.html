@@ -17,10 +17,43 @@
         </ul>
         <div class="flex center-y row-container col-gap-1">
             <button class="light-btn flex center-y center-x font-size-1 bg-black font-color-white h-bg-black p-0-5" type="button"><ion-icon name="moon"></ion-icon></button>
-            <a href="carrito.html"><ion-icon class="bag-btn-icon font-size-4-5 flex center-y" name="bag-outline"></ion-icon></a>
-            <span class="font-size-1 font-color-white">0</span>
+            <a class="cart-btn"><ion-icon class="bag-btn-icon font-size-4-5 flex center-y" name="bag-outline"></ion-icon></a>
+            <span class="product-amount font-size-1 font-color-white">0</span>
         </div>
     </nav>
+    <div id="cart" class="carrito hidden flex col-container p-2 row-gap-2 bg-black font-color-white">
+        <div class="flex row-container space-between">
+            <p></p>
+            <a class="close-btn"><ion-icon class="font-size-4" name="close"></ion-icon></a>
+        </div>
+        <h2 class="txt-cap">- carrito de compras -</h2>
+        <div class="flex row-container space-between weight-600 txt-upp">
+            <p>producto</p>
+            <p>subtotal</p>
+        </div>
+        <div class="product-cart-list flex col-container row-gap-1-5">
+            <!-- <div class="product-card cart flex row-container col-gap-0-5 bg-gray-1 font-color-gray-2 txt-cap">
+                <div class="img-container">
+                    <img src="sources/imgs/achicoria.jpg" alt="achicoria (atado)">
+                </div>
+                <div class="flex col-container row-gap-0-5 p-1">
+                    <p>achicoria (atado)</p>
+                    <p>$150</p>
+                    <div class="btn-product-amount-container flex row-container">
+                        <button class="font-size-3">-</button>
+                        <p class="font-size-3">1</p>
+                        <button class="font-size-3">+</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="precio-total flex row-container space-between center-y m-1">
+        </div>
+        <div class="flex row-container space-between">
+            <button class="buy-btn bg-green-2 p-0-5 txt-upp weight-600" type="button">comprar</button>
+        </div>
+    </div>
     <h1 class="flex center-x bg-green-1 font-color-black font-size-2 txt-upp p-0-5 weight-700">tienda</h1>
 
     <div class="product-list flex row-container wrap col-gap-1-5 row-gap-1-5 p-5">
@@ -45,5 +78,6 @@
     <script src="https://kit.fontawesome.com/bfee6bbf74.js" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

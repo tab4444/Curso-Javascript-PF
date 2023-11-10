@@ -110,9 +110,21 @@ const productos = [
 ];
 
 const productsEl = document.querySelector(".product-list");
-const productsCartEl = document.querySelector(".product-list.cart");
+const productsCartEl = document.querySelector(".product-cart-list");
 const totalAmountEl = document.querySelector(".precio-total");
 const totalProductsEl = document.querySelector(".product-amount");
+
+const cartModal = document.getElementById("cart");
+const cartBtn = document.querySelector(".cart-btn");
+const closeBtn = document.querySelector(".close-btn");
+
+cartBtn.addEventListener("click", () => {
+    cartModal.classList.remove("hidden");
+});
+closeBtn.addEventListener("click", () => {
+    cartModal.classList.add("hidden");
+});
+
 
 function renderProductos(){
     productos.forEach((element) => {
@@ -127,7 +139,7 @@ function renderProductos(){
                 <p>$${element.price}</p>
                 <p class="font-color-gray-2">${element.category}</p>
             </div>
-            <button class="buy-div flex center-x center-y row-container col-gap-1 font-color-black weight-800 txt-upp font-size-2 p-0-5 bg-gray-1">
+            <button onclick="añadirAlCarrito(${element.id})" class="buy-div flex center-x center-y row-container col-gap-1 font-color-black weight-800 txt-upp font-size-2 p-0-5 bg-gray-1">
                 <i class="fa-solid fa-cart-shopping"></i>
                 comprar
             </button>
@@ -138,6 +150,7 @@ function renderProductos(){
 renderProductos();
 
 let carrito = JSON.parse(localStorage.getItem("CARRITO")) || [];
+actualizarCarrito();
 
 function añadirAlCarrito(id){
     if(carrito.some((item) => item.id === id)){
@@ -150,20 +163,28 @@ function añadirAlCarrito(id){
             numeroDeUnidades: 1
         });
     }
+    actualizarCarrito();
+}
+
+function actualizarCarrito(){
+    renderPrecioTotal();
+    renderProductosCarrito();
+
+    localStorage.setItem("CARRITO", JSON.stringify(carrito));
 }
 
 function renderPrecioTotal(){
     let precioTotal = 0, cantItems = 0;
-    carrito.forEach(element => {
-        precioTotal += element.precio * item.numeroDeUnidades,
-        cantItems += element.numeroDeUnidades
+    carrito.forEach((element) => {
+        precioTotal += element.price * element.numeroDeUnidades;
+        cantItems += element.numeroDeUnidades;
     });
 
     totalAmountEl.innerHTML =
     `
-    <h3 class="txt-upp weight-600 ">total(${cantItems} productos): $${precioTotal.toFixed(2)}</h3>
-    <button class="buy-btn bg-green-2 p-0-5 txt-upp weight-600" type="button">comprar</button>
+    <h3 class="txt-upp weight-600">total(${cantItems} productos): $${precioTotal.toFixed(2)}</h3>
     `;
+    totalProductsEl.innerHTML = cantItems;
 }
 
 let buyBtn = document.querySelector(".buy-btn");
@@ -171,25 +192,33 @@ buyBtn.addEventListener("click", () => {
     carrito.forEach((item) => {
         eliminarProductosCarrito(item.id);
     })
+    Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Gracias por su compra",
+        text: "¡Vuelva pronto!",
+        showConfirmButton: false,
+        timer: 1500
+    });
 })
 
 
 function renderProductosCarrito(){
     productsCartEl.innerHTML = "";
-    carrito.forEach(element => {
+    carrito.forEach((element) => {
         productsCartEl.innerHTML +=
         `
-        <div class="product-card cart flex row-container col-gap-0-5">
+        <div class="product-card cart flex row-container col-gap-0-5 bg-gray-1 font-color-gray-2 txt-cap">
                 <div class="img-container">
                     <img src="${element.image}" alt="${element.name}">
                 </div>
                 <div class="flex col-container row-gap-0-5 p-1">
                     <p>${element.name}</p>
-                    <p>$${element.precio}</p>
+                    <p>$${element.price}</p>
                     <div class="btn-product-amount-container flex row-container">
-                        <button class="menos-producto-btn font-size-3">-</button>
+                        <button onclick="cambiarStock('menos', ${element.id})" class="menos-producto-btn font-size-3">-</button>
                         <p class="font-size-3">${element.numeroDeUnidades}</p>
-                        <button class="mas-producto-btn font-size-3">+</button>
+                        <button onclick="cambiarStock('mas', ${element.id})" class="mas-producto-btn font-size-3">+</button>
                     </div>
                 </div>
             </div>
@@ -202,18 +231,9 @@ function eliminarProductosCarrito(id){
     actualizarCarrito();
 }
 
-let menos = document.querySelector(".menos-producto-btn");
-menos.addEventListener("click", () =>{
-    cambiarStock("menos")
-})
-let mas = document.querySelector(".mas-producto-btn");
-mas.addEventListener("click", () =>{
-    cambiarStock("mas")
-})
-
 function cambiarStock(action, id){
     carrito = carrito.map((item) => {
-        let stock = item.numeroDeUnidades;
+        let numeroDeUnidades = item.numeroDeUnidades;
         
         if(item.id === id){
             if(action === "menos" && numeroDeUnidades > 1){
@@ -229,11 +249,4 @@ function cambiarStock(action, id){
         };
     });
     actualizarCarrito();
-}
-
-function actualizarCarrito(){
-    renderProductosCarrito();
-    renderPrecioTotal();
-
-    localStorage.setItem("CARRITO", JSON.stringify(carrito));
 }

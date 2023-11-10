@@ -295,7 +295,7 @@ button.buy-btn:hover{
   border-radius: 10px;
 }
 
-.product-list.cart{
+.product-cart-list{
   width: 100vh;
 }
 .product-card{
@@ -307,9 +307,10 @@ button.buy-btn:hover{
   border-radius: 10px;
   max-width: 380px;
   height: 180px;
+  border-bottom: none;
 }
 .product-card.cart .img-container{
-  height: 177px;
+  height: 180px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -359,4 +360,25 @@ background-color: var(--gris-1);
   width: 30px;
   background-color: var(--blanco);
   border: 1px solid #777;
+}
+
+.carrito{
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 70%;
+  height: 100%;
+  transition: transform .7s ease;
+  transform: translateX(0);
+  overflow-y: scroll;
+}
+.cart-btn{
+  cursor: pointer;
+}
+.close-btn{
+  cursor: pointer;
+}
+.hidden{
+  transform: translateX(100%);
 }
