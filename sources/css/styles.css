@@ -393,3 +393,6 @@ footer{
   left: 0;
   right: 0;
 }
+form{
+  height: 75vh;
+}
