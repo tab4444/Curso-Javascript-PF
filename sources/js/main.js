@@ -250,3 +250,14 @@ function cambiarStock(action, id){
     });
     actualizarCarrito();
 }
+
+let form = document.getElementById("contact-form");
+form.addEventListener("submit", () => {
+    Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Gracias por su mensaje",
+        showConfirmButton: false,
+        timer: 1500
+    });
+});

@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="sources/css/styles.css">
 </head>
 <body>
-    <nav class="flex row-container space-between center-y bg-black font-color-white txt-cap weight-400 p-1">
+    <nav class="flex row-container space-between center-y bg-black-2 font-color-white txt-cap weight-400 p-1">
         <ul class="flex row-container col-gap-1-5 center-y">
-            <li><a href="index.html"><img class="img-s-1" src="sources/imgs/logo.png" alt="Logo de El Bolson de Thiago"></a></li>
+            <li><a href="index.html"><img class="img-s-1" src="sources/imgs/logo-black-bg.png" alt="Logo de El Bolson de Thiago"></a></li>
             <li><a href="index.html">inicio</a></li>
             <li><a href="tienda.html">tienda</a></li>
             <li><a href="contacto.html">contacto</a></li>
@@ -22,14 +22,84 @@
         </div>
     </nav>
 
-    <h1 class="flex center-x bg-green-1 font-color-black font-size-2 txt-upp p-0-5 weight-700">contacto</h1>
+    
 
-    <div class="flex center-x center-y bg-black p-5">
-        <form action="#">
-            <p>Lorem</p>
-        </form>
+    <div class="flex row-container">
+        <div class="flex center-x col-container row-gap-1 bg-black-2 p-2 font-color-white contact-info">
+            <div class="img-container">
+                <img src="sources/imgs/logo-black-bg.png" alt="logo de El Bolson de Thiago">
+            </div>
+            <h2 class="txt-cap">contactenos</h2>
+            <div class="flex row-container col-gap-1 center-y">
+                <ion-icon name="call"></ion-icon>
+                <div>
+                    <h3>teléfono</h3>
+                    <p>+54 11 58897130</p>
+                </div>
+            </div>
+            <div class="flex row-container col-gap-1 center-y">
+                <ion-icon name="pin"></ion-icon>
+                <div>
+                    <h3>dirección</h3>
+                    <p>Avenida Siempreviva 742</p>
+                </div>
+            </div>
+            <div class="flex row-container col-gap-1 center-y">
+                <ion-icon name="browsers"></ion-icon>
+                <div>
+                    <h3>sitio web</h3>
+                    <p>el-bolson-de-thiago.netlify.app</p>
+                </div>
+            </div>
+            <div class="flex row-container col-gap-1 center-y">
+                <ion-icon name="mail"></ion-icon>
+                <div>
+                    <h3>dirección mail</h3>
+                    <p>thiagoblock445@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex contact-form">
+            <form id="contact-form" action="#" class="flex col-container row-gap-1 p-2 bg-black-2">
+                <label for="name">Nombre completo:</label>
+                <input type="text" name="name" id="full-name">
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+
+                <label for="password">Contraseña:</label>
+                <input type="password" name="password" id="password">
+
+                <label for="messagge">Mensaje:</label>
+                <textarea  name="messagge" rows="10" id="msg"></textarea>
+
+                <button type="submit" class="bg-green-3 font-color-white">enviar mensaje</button>
+            </form>
+        </div>
     </div>
 
+
+    <footer class="bg-black-2 font-color-white p-3">
+        <div class="flex row-container space-between col-gap-2 p-2">
+            <p class="font-size-5 txt-upp font-fam-2 font-color-green-1">el bolsón de thiago</p>
+            <ul class="flex col-container row-gap-0-5 txt-cap">
+                <li class="weight-600">navegación</li>
+                <li class="weight-300 font-color-gray-1"><a href="index.html">inicio</a></li>
+                <li class="weight-300 font-color-gray-1"><a href="tienda.html">tienda</a></li>
+                <li class="weight-300 font-color-gray-1"><a href="contacto.html">contacto</a></li>
+            </ul>
+            <ul class="flex col-container row-gap-0-5 txt-cap">
+                <li class="weight-600">redes sociales</li>
+                <li class="weight-300 font-color-gray-1"><a href="https://www.linkedin.com/in/thiagoblock/"
+                        target="_blank">linkedin <ion-icon name="logo-linkedin"></ion-icon></a></li>
+                <li class="weight-300 font-color-gray-1"><a href="https://github.com/tab4444" target="_blank">GitHub
+                        <ion-icon name="logo-github"></ion-icon></a></li>
+                <li class="weight-300 font-color-gray-1"><a href="https://www.instagram.com/thiagoblock_/"
+                        target="_blank">instagram <ion-icon name="logo-instagram"></ion-icon></a></li>
+            </ul>
+        </div>
+    </footer>
     
     <script type="module" src="sources/js/productos.js"></script>
     <script src="sources/js/main.js"></script>
