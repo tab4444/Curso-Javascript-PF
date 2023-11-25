@@ -108,5 +108,3 @@ const productos = [
         desc: "La remolacha es tal vez el vegetal más dulce de la naturaleza, sus formas redondas de color violeta profundo nos aportan exquisitos sabores y contrastes de colores en todos nuestros platos."
     }
 ];
-
-export {productos};

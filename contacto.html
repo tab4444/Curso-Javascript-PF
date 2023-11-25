@@ -16,7 +16,6 @@
             <li><a href="contacto.html">contacto</a></li>
         </ul>
         <div class="flex center-y row-container col-gap-1">
-            <button class="light-btn flex center-y center-x font-size-1 bg-black font-color-white h-bg-black p-0-5" type="button"><ion-icon name="moon"></ion-icon></button>
             <a class="cart-btn"><ion-icon class="bag-btn-icon font-size-4-5 flex center-y" name="bag-outline"></ion-icon></a>
             <span class="product-amount font-size-1 font-color-white">0</span>
         </div>
@@ -25,7 +24,7 @@
     
 
     <div class="flex row-container">
-        <div class="flex center-x col-container row-gap-1 bg-black-2 p-2 font-color-white contact-info">
+        <div class="darkmode-ignore flex center-x col-container row-gap-1 bg-black-2 p-2 font-color-white contact-info">
             <div class="img-container">
                 <img src="sources/imgs/logo-black-bg.png" alt="logo de El Bolson de Thiago">
             </div>
@@ -61,7 +60,7 @@
         </div>
 
         <div class="flex contact-form">
-            <form id="contact-form" action="#" class="flex col-container row-gap-1 p-2 bg-black-2">
+            <form id="contact-form" action="#" class="flex col-container row-gap-1 p-2">
                 <label for="name">Nombre completo:</label>
                 <input type="text" name="name" id="full-name">
 
@@ -74,13 +73,13 @@
                 <label for="messagge">Mensaje:</label>
                 <textarea  name="messagge" rows="10" id="msg"></textarea>
 
-                <button type="submit" class="bg-green-3 font-color-white">enviar mensaje</button>
+                <button type="submit" class="bg-green-3 font-color-white darkmode-ignore">enviar mensaje</button>
             </form>
         </div>
     </div>
 
 
-    <footer class="bg-black-2 font-color-white p-3">
+    <footer class="darkmode-ignore bg-black-2 font-color-white p-3">
         <div class="flex row-container space-between col-gap-2 p-2">
             <p class="font-size-5 txt-upp font-fam-2 font-color-green-1">el bolsón de thiago</p>
             <ul class="flex col-container row-gap-0-5 txt-cap">
@@ -101,6 +100,13 @@
         </div>
     </footer>
     
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+            new Darkmode().showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
     <script type="module" src="sources/js/productos.js"></script>
     <script src="sources/js/main.js"></script>
     <script src="https://kit.fontawesome.com/bfee6bbf74.js" crossorigin="anonymous"></script>

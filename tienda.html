@@ -16,14 +16,13 @@
             <li><a href="contacto.html">contacto</a></li>
         </ul>
         <div class="flex center-y row-container col-gap-1">
-            <button class="light-btn flex center-y center-x font-size-1 bg-black font-color-white h-bg-black p-0-5" type="button"><ion-icon name="moon"></ion-icon></button>
             <a class="cart-btn"><ion-icon class="bag-btn-icon font-size-4-5 flex center-y" name="bag-outline"></ion-icon></a>
             <span class="product-amount font-size-1 font-color-white">0</span>
         </div>
     </nav>
     <div id="cart" class="carrito hidden flex col-container p-2 row-gap-2 bg-black font-color-white">
         <div class="flex row-container space-between">
-            <p></p>
+            <a class="delete-btn"><ion-icon name="trash"></ion-icon></a>
             <a class="close-btn"><ion-icon class="font-size-4" name="close"></ion-icon></a>
         </div>
         <h2 class="txt-cap">- carrito de compras -</h2>
@@ -68,11 +67,18 @@
         </div>
     </footer>
 
-    <script type="module" src="sources/js/productos.js"></script>
+    <script src="sources/js/productos.js"></script>
     <script src="sources/js/main.js"></script>
     <script src="https://kit.fontawesome.com/bfee6bbf74.js" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+            new Darkmode().showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
 </body>
 </html>
