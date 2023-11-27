@@ -7,6 +7,23 @@ const cartModal = document.getElementById("cart");
 const cartBtn = document.querySelector(".cart-btn");
 const closeBtn = document.querySelector(".close-btn");
 
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    const data = Object.fromEntries(
+        new FormData(e.target)
+    );
+    sessionStorage.setItem("USUARIO", JSON.stringify(data));
+    Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Gracias por su mensaje",
+        showConfirmButton: false,
+        timer: 1500
+    });
+});
+
 cartBtn.addEventListener("click", () => {
     cartModal.classList.remove("hidden");
 });
@@ -149,14 +166,3 @@ function cambiarStock(action, id){
     });
     actualizarCarrito();
 }
-
-let form = document.getElementById("contact-form");
-form.addEventListener("submit", () => {
-    Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Gracias por su mensaje",
-        showConfirmButton: false,
-        timer: 1500
-    });
-});
